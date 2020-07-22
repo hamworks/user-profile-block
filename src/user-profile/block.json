@@ -1,0 +1,10 @@
+{
+    "name": "user-profile-block/user-profile",
+    "attributes": {
+        "userId": {
+            "type": "number",
+            "default": 0
+        }
+    },
+    "category": "common"
+}
