@@ -12,7 +12,7 @@ const registerBlock = ( {
 	settings,
 	metadata,
 }: {
-	name: string;
+	name: string | undefined;
 	settings: Partial< BlockConfiguration >;
 	metadata: Partial< BlockConfiguration >;
 } ) => {
@@ -21,14 +21,15 @@ const registerBlock = ( {
 		...settings,
 		...metadata,
 	};
-	console.log( name );
-	registerBlockType( name, config );
+	if ( name ) {
+		registerBlockType( name, config );
+	}
 };
 
 /**
  * Registration
  */
 const registerBlocks = () => {
-	[ userProfile ].forEach( registerBlock );
+	registerBlock( userProfile )
 };
 registerBlocks();

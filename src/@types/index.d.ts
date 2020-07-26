@@ -1,3 +1,6 @@
-declare module 'vfile-message' {
-	export type VFileMessage = any;
+import { BlockConfiguration } from "@wordpress/blocks";
+
+declare module '*/block.json' {
+	const data: BlockConfiguration;
+	export default data;
 }
