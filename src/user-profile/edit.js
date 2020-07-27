@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
-import { BlockEditProps } from '@wordpress/blocks';
 import { InspectorControls } from '@wordpress/block-editor';
 import {
 	Disabled,
@@ -9,29 +8,17 @@ import {
 	PanelBody,
 	Placeholder,
 } from '@wordpress/components';
-//@ts-ignore
+
 import { ServerSideRender } from '@wordpress/editor';
 import metadata from './block.json';
-import { attributes } from './block';
 
-type Author = {
-	avatar_urls: Record< number, string >;
-	description: string;
-	id: number;
-	link: string;
-	meta: any;
-	name: string;
-	slug: string;
-	url: string;
-};
-
-const Edit: React.FC< BlockEditProps< attributes > > = ( {
+const Edit = ( {
 	className,
 	attributes,
 	setAttributes,
 } ) => {
 	const { userId } = attributes;
-	const authors: Author[] = useSelect(
+	const authors = useSelect(
 		( select ) => select( 'core' ).getAuthors() || [],
 		[]
 	);

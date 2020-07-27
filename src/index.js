@@ -1,4 +1,4 @@
-import { registerBlockType, BlockConfiguration } from '@wordpress/blocks';
+import { registerBlockType } from '@wordpress/blocks';
 import * as userProfile from './user-profile';
 
 /**
@@ -10,14 +10,9 @@ import * as userProfile from './user-profile';
 const registerBlock = ( {
 	name,
 	settings,
-	metadata,
-}: {
-	name: string | undefined;
-	settings: Partial< BlockConfiguration >;
-	metadata: Partial< BlockConfiguration >;
-} ) => {
-	// @ts-ignore
-	const config: BlockConfiguration = {
+	metadata
+}) => {
+	const config = {
 		...settings,
 		...metadata,
 	};

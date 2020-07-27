@@ -4,16 +4,6 @@
     "author": "Hiroshi Urabe <urabe@ham.works> (https://ham.works)",
     "dependencies": {},
     "devDependencies": {
-        "@babel/plugin-proposal-optional-chaining": "^7.10.4",
-        "@babel/preset-typescript": "^7.10.4",
-        "@types/lodash": "^4.14.158",
-        "@types/vfile-message": "^2.0.0",
-        "@types/wordpress__block-editor": "^2.2.8",
-        "@types/wordpress__blocks": "^6.4.9",
-        "@types/wordpress__editor": "^9.4.4",
-        "@types/wordpress__i18n": "^3.11.0",
-        "@typescript-eslint/eslint-plugin": "^3.7.0",
-        "@typescript-eslint/parser": "^3.7.0",
         "@wordpress/browserslist-config": "2.7.0",
         "@wordpress/scripts": "^12.1.1",
         "cssnano": "^4.1.10",
@@ -22,8 +12,7 @@
         "postcss-omit-import-tilde": "^1.0.1",
         "postcss-preset-env": "^6.7.0",
         "postcss-url": "^8.0.0",
-        "prettier": "npm:wp-prettier@^2.0.4",
-        "typescript": "^3.9.7"
+        "prettier": "npm:wp-prettier@^2.0.4"
     },
     "license": "GPL-2.0+",
     "main": "build/index.js",
@@ -49,13 +38,13 @@
     },
     "scripts": {
         "build": "NODE_ENV=production npm run build:dev",
-        "build:dev": "tsc && npm run postcss && wp-scripts build",
+        "build:dev": "npm run postcss && wp-scripts build",
         "env": "wp-scripts env",
-        "lint-js": "wp-scripts lint-js --ext .js,.jsx,.ts,.tsx src/**",
+        "lint-js": "wp-scripts lint-js src/**",
         "lint-js:fix": "npm run lint-js -- --fix",
         "packages-update": "wp-scripts packages-update",
         "postcss": "postcss ./src/[^_]*.css --dir ./build --verbose",
-        "start": "npm run postcss -- -w & tsc --watch & wp-scripts start",
+        "start": "npm run postcss -- -w & wp-scripts start",
         "tsc": "tsc"
     },
     "wp-env": {
