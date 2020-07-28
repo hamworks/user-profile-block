@@ -29,6 +29,13 @@ function user_profile_block_register_block() {
 		true
 	);
 
+	wp_register_style(
+		'user-profile-block',
+		plugins_url( 'build/index.css', __FILE__ ),
+		array(),
+		$asset_file['version']
+	);
+
 	$metadata     = json_decode( file_get_contents( __DIR__ . '/src/user-profile/block.json' ), true );
 	$user_profile = new \HAMWORKS\User_Profile_Block\User_Profile( 'user-profile-block/user-profile' );
 
@@ -38,6 +45,7 @@ function user_profile_block_register_block() {
 			$metadata,
 			array(
 				'editor_script'   => 'user-profile-block',
+				'style'           => 'user-profile-block',
 				'render_callback' => array( $user_profile, 'render' ),
 			)
 		)

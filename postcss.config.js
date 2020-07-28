@@ -1,19 +1,11 @@
 const nodeEnv = process.env.NODE_ENV;
 const mode = nodeEnv ? nodeEnv : 'development';
-const postcssPresetEnv = require( 'postcss-preset-env' );
-const atImport = require( 'postcss-import' );
-const url = require( 'postcss-url' );
-const cssnano = require( 'cssnano' );
 
 module.exports = {
 	map: mode === 'development',
-	plugins: [
-		require( 'postcss-omit-import-tilde' ),
-		atImport( {
-			extensions: [ '.css', '.scss', '.pcss' ],
-		} ),
-		url(),
-		postcssPresetEnv( {
+	plugins: {
+		'postcss-import': {},
+		'postcss-preset-env': {
 			stage: 1,
 			features: {
 				'nesting-rules': true,
@@ -22,7 +14,8 @@ module.exports = {
 			autoprefixer: {
 				grid: true,
 			},
-		} ),
-		mode === 'development' ? null : cssnano(),
-	],
+		},
+		'postcss-pxtorem': {},
+		cssnano: {},
+	},
 };

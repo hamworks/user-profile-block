@@ -7,11 +7,11 @@
         "@wordpress/browserslist-config": "2.7.0",
         "@wordpress/scripts": "^12.1.1",
         "cssnano": "^4.1.10",
-        "postcss-cli": "^7.1.1",
         "postcss-import": "^12.0.1",
+        "postcss-import-resolver": "^2.0.0",
         "postcss-omit-import-tilde": "^1.0.1",
         "postcss-preset-env": "^6.7.0",
-        "postcss-url": "^8.0.0",
+        "postcss-pxtorem": "^4.0.1",
         "prettier": "npm:wp-prettier@^2.0.4"
     },
     "license": "GPL-2.0+",
@@ -38,14 +38,12 @@
     },
     "scripts": {
         "build": "NODE_ENV=production npm run build:dev",
-        "build:dev": "npm run postcss && wp-scripts build",
+        "build:dev": "wp-scripts build",
         "env": "wp-scripts env",
-        "lint-js": "wp-scripts lint-js src/**",
+        "lint-js": "wp-scripts lint-js src",
         "lint-js:fix": "npm run lint-js -- --fix",
         "packages-update": "wp-scripts packages-update",
-        "postcss": "postcss ./src/[^_]*.css --dir ./build --verbose",
-        "start": "npm run postcss -- -w & wp-scripts start",
-        "tsc": "tsc"
+        "start": "wp-scripts start"
     },
     "wp-env": {
         "plugin-dir": "user-profile-block",
