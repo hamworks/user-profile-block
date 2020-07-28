@@ -21,6 +21,7 @@ const Edit = ( { className, attributes, setAttributes } ) => {
 	}, [] );
 	const userControl = (
 		<SelectControl
+			label={ 'User' }
 			onChange={ ( id ) => {
 				setAttributes( { userId: Number( id ) } );
 			} }
@@ -28,7 +29,7 @@ const Edit = ( { className, attributes, setAttributes } ) => {
 			options={ [
 				{
 					value: '0',
-					label: __( 'Select user' ),
+					label: __( 'None' ),
 				},
 				...authors.map( ( { id, name, slug } ) => ( {
 					value: `${ id }`,
@@ -40,7 +41,9 @@ const Edit = ( { className, attributes, setAttributes } ) => {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody>{ userControl }</PanelBody>
+				<PanelBody title={ 'User profile settings' }>
+					{ userControl }
+				</PanelBody>
 			</InspectorControls>
 			{ userId ? (
 				<Disabled>

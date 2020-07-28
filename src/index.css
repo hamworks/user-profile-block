@@ -3,11 +3,14 @@
 	align-items: flex-start;
 }
 
-.wp-block-user-profile-block-user-profile-media__avatar {
+.wp-block-user-profile-block-user-profile-media .wp-block-user-profile-block-user-profile-media__avatar {
 	margin-right: 1rem;
-	max-width: 100px;
 }
 
-.wp-block-user-profile-block-user-profile-media__body {
+.wp-block-user-profile-block-user-profile-media .wp-block-user-profile-block-user-profile-media__body {
 	flex: 1;
+}
+
+.wp-block-user-profile-block-user-profile-media .wp-block-user-profile-block-user-profile-media__body .wp-block-user-profile-block-user-profile-media__title {
+	margin-top: 0;
 }

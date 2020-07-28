@@ -6,9 +6,9 @@ import './index.css';
  * Function to register an individual block.
  *
  * @param {Object} block The block to be registered.
- * @param block.name
- * @param block.settings
- * @param block.metadata
+ * @param {string} block.name
+ * @param {Object} block.settings
+ * @param {Object} block.metadata
  */
 const registerBlock = ( { name, settings, metadata } ) => {
 	const config = {

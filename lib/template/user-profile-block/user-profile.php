@@ -11,7 +11,7 @@
 			<?php echo get_avatar( $user_id ); ?>
 		</div>
 		<div class="wp-block-user-profile-block-user-profile-media__body">
-			<h3><?php echo esc_html( get_the_author_meta( 'display_name', $user_id ) ); ?></h3>
+			<h5 class="wp-block-user-profile-block-user-profile-media__title"><?php echo esc_html( get_the_author_meta( 'display_name', $user_id ) ); ?></h5>
 			<?php echo esc_html( get_the_author_meta( 'description', $user_id ) ); ?>
 		</div>
 	</div>

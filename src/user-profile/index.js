@@ -6,12 +6,12 @@ import edit from './edit';
 
 import metadata from './block.json';
 
-const { name, title, textdomain, icon } = metadata;
+const { name, icon } = metadata;
 
 export { metadata, name };
 
 export const settings = {
-	title: __( title, textdomain ),
+	title: __( 'User Profile', 'user-profile-block' ),
 	icon,
 	edit,
 	save: () => null,
