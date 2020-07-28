@@ -12,20 +12,17 @@ import {
 import { ServerSideRender } from '@wordpress/editor';
 import metadata from './block.json';
 
-const Edit = ( {
-	className,
-	attributes,
-	setAttributes,
-} ) => {
+const Edit = ( { className, attributes, setAttributes } ) => {
 	const { userId } = attributes;
-	const authors = useSelect(
-		( select ) => select( 'core' ).getAuthors() || [],
-		[]
-	);
+	const authors = useSelect( ( select ) => {
+		const users = select( 'core' ).getEntityRecords( 'root', 'user' );
+		//console.log(select( 'core' ).getAuthors())
+		return users || [];
+	}, [] );
 	const userControl = (
 		<SelectControl
-			onChange={ ( userId ) => {
-				setAttributes( { userId: Number( userId ) } );
+			onChange={ ( id ) => {
+				setAttributes( { userId: Number( id ) } );
 			} }
 			value={ `${ userId }` }
 			options={ [
