@@ -36,7 +36,7 @@ function user_profile_block_register_block() {
 		$asset_file['version']
 	);
 
-	$metadata     = json_decode( file_get_contents( __DIR__ . '/src/user-profile/block.json' ), true );
+	$metadata     = json_decode( file_get_contents( __DIR__ . '/src/user-profile/block.json' ), true ); //phpcs:ignore
 	$user_profile = new \HAMWORKS\User_Profile_Block\User_Profile( 'user-profile-block/user-profile' );
 
 	register_block_type(

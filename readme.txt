@@ -1,9 +1,9 @@
 === User Profile Block ===
-Contributors:      Toro_Unit, h2ham
+Contributors:      Toro_Unit, hamworks
 Donate link:       https://www.paypal.me/torounit
 Tags:              blocks
 Requires at least: 5.0
-Tested up to:      5.4
+Tested up to:      5.5
 Requires PHP:      7.0
 Stable tag: nightly
 License:           GPLv2 or later
